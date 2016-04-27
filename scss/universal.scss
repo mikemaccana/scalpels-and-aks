@@ -41,7 +41,6 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $heading-font;
   color: #f5f5f5;
   font-weight: 100;
   letter-spacing: 1px;
@@ -51,8 +50,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 96px;
-  line-height: 96px;
+  font-size: 256px;
+  line-height: 256px;
+  font-family: $heading-font;
   padding: 0;
   margin: 0;
   color: #fff;
@@ -65,39 +65,40 @@ h1 {
 }
 
 h2 {
-    font-size: 45px;
-    line-height: 45px;
-    bottom: 150px;
-    padding: 0;
-    margin: 0;
-    font-weight: 600;
-    color: #fff;
-    letter-spacing: -2px;
+  font-size: 256px;
+  line-height: 256px;
+  font-family: $heading-font;
+  bottom: 150px;
+  padding: 0;
+  margin: 0;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -2px;
   font-size: 128px;
   color: #f5f5f5;
   line-height: 1;
   margin: 0;
-    a {
-      text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }
 
 h3 {
-    font-size: 20px;
-    line-height: 36px;
-    padding: 0 0 10px 0;
-    margin: 0;
-    padding-right: 40px;
-    font-weight: 600;
-    letter-spacing: -1px;
-    color: #eaeaea;
+  font-size: 20px;
+  line-height: 36px;
+  padding: 0 0 10px 0;
+  margin: 0;
+  padding-right: 40px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #eaeaea;
   font-size: 70px;
   color: #f5f5f5;
   line-height: 1.5;
 }
 
 h4 {
-    margin: 0;
+   margin: 0;
   color: #f5f5f5;
   font-size: 50px;
 }
