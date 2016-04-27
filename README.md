@@ -1,6 +1,6 @@
-# NPM everywhere
+# Scalpels and AKs: how to scrape everything in node.js
 
-This talk is online at [npm-everywhere](http://mikemaccana.github.io/npm-everywhere)
+This talk is online at [scalpels-and-aks](http://mikemaccana.github.io/scalpels-and-aks).
 
 Mike is the founder of CertSimple, which does fast, painless EV SSL. He's built both server infrastructure and web apps for companies including Red Hat, IBM, Google,  Microsoft and a number of startups for the last 17 years.
 
