@@ -117,6 +117,29 @@
 			transform: translate(4000px);
 			display: none;
 		}
+
+		&.fill {
+			iframe {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				border: 0;
+				margin: 0;
+				border-radius: 10px;
+				z-index: -1;
+			}
+			img {
+				position: absolute;
+				left: 0;
+				top: 0;
+				min-width: 100%;
+				min-height: 100%;
+				border-radius: 10px;
+				z-index: -1;
+			}
+		}
 	}
 }
 

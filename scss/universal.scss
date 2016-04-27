@@ -52,6 +52,7 @@ h1 {
   padding: 0;
   margin: 0;
   color: $pale-blue;
+  transform: skew(0, -8deg);
   a {
     text-decoration: none;
     font-size: 20px;
@@ -113,26 +114,7 @@ small {
 }
 
 
-article.fill iframe {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	border: 0;
-	margin: 0;
-	border-radius: 10px;
-	z-index: -1;
-}
-article.fill img {
-	position: absolute;
-	left: 0;
-	top: 0;
-	min-width: 100%;
-	min-height: 100%;
-	border-radius: 10px;
-	z-index: -1;
-}
+
 img.centered {
 	margin: 0 auto;
 	display: block;
