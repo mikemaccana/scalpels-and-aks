@@ -24,10 +24,10 @@ gulp.task('slides',function () {
 
 
 gulp.task('styles',function() {
-	gulp.src('./styles.scss')
+	gulp.src('./scss/styles.scss')
 		.pipe(sass())
 		.pipe(p.autoprefixer())
-		.pipe(gulp.dest('./'))
+		.pipe(gulp.dest('./css'))
 		.pipe(reload({stream:true}))
 });
 
