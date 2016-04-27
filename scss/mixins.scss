@@ -1,0 +1,23 @@
+$colorCombinations: ((#4F7756 #010101), (#55AD7A #010101), (#90F86F #010101), (#25DC2E #000000));
+
+@function randomGradient() {
+	$randomNumber: random(4);
+	$combo: nth($colorCombinations, $randomNumber);
+	@return $combo;
+}
+
+$slideCount: 40;
+
+@for $slideNumber from 1 through $slideCount {
+	$imageNumber: random(10) + 1;
+	$image: "/images/"+$imageNumber+".jpg";
+	$gradient: randomGradient();
+	.slides > article:nth-child(39n+#{$slideNumber}):before {
+		background-image: url($image);
+		content: nth($gradient, 1);
+	}
+	.slides > article:nth-child(39n+#{$slideNumber}):after {
+		background-image: linear-gradient(#{random(360)}deg, nth($gradient, 2) 0%, nth($gradient, 1) 100%);
+	}
+}
+
