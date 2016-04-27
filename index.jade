@@ -46,8 +46,7 @@ html
 						li No webhooks, so no realtime
 
 				article
-					p How to scrape anything you want
-					p All the things you'll wish you knew earlier
+					h2 How to scrape anything you want
 
 				article
 					h1 THE SCALPEL
@@ -80,7 +79,7 @@ html
 						li Familiar
 
 				article
-					h2 Basic login with cheerio
+					h2 Typical login & CSRF with cheerio
 					pre.prettyprint
 						code(data-lang="javascript").
 							agent
@@ -162,8 +161,7 @@ html
 						li Casper is higher level than PhantomJS
 						li PhantomJS folks like Casper
 						li SpookyJS (node) isn't maintained
-						li You can evaluate JS in node + JSDOM, (and sandbox with require('vm').runInNewContext() ) but still...
-						li Best place to simulate a browser is a headless browser
+						li You can evaluate JS in node sandbox with 'vm' module but not a complete browser
 
 				article
 					h1 CASPER ISN'T NODE
@@ -224,7 +222,7 @@ html
 					p Using the 'webserver' commonjs module
 
 				article
-					p Using the 'webserver' CommonJS module:
+					p Use the 'webserver' module to make a Casper microservice:
 					pre.prettyprint
 						code(data-lang="javascript").
 							#!/usr/bin/env casperjs
@@ -259,7 +257,7 @@ html
 					ul.build
 						li Reconsider
 						li Use a modern useragent
-						li Check your referers
+						li Check your referers and CSRF tokens
 						li proxymesh.com - 280s IPs per day
 						li Various things on GitHub can defeat CloudFlare
 
@@ -280,9 +278,11 @@ html
 
 				article
 					h1 Links
+					a(href="http://mikemaccana.github.io/scalpels-and-aks" target=_blank) This talk online!
 					a(href="https://www.npmjs.com/package/request" target=_blank) Request cookies examples
 					a(href="https://github.com/visionmedia/superagent/blob/master/test/node/agency.js" target=_blank) Superagent cookie examples
 					a(href="https://github.com/cheeriojs/cheerio" target=_blank) Cheerio
+					a(href="http://docs.casperjs.org/en/latest/quickstart.html" target=_blank) CasperJS quickstart
 
 
 
