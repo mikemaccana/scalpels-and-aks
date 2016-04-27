@@ -37,36 +37,36 @@ body {
   color: #f21818;
   background: #222;
   position: absolute;
+  article {
+    display: block;
+    position: absolute;
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+    margin-left: -960px;
+    margin-top: -540px;
+    left: 50%;
+    top: 50%;
+    border-radius: 5px;
+    padding: 0;
+    background-color: none;
+    transition: all 0.3s ease-out;
+    justify-content: center;
+    flex-direction: column;
+    * {
+      display: block;
+      clear: both;
+      min-width: 100%;
+    	flex-wrap: wrap;
+    }
+    img {
+      min-width: 0;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
 
-}
-.slides > article {
-  display: block;
-  position: absolute;
-  overflow: hidden;
-  width: 1920px;
-  height: 1080px;
-  margin-left: -960px;
-  margin-top: -540px;
-  left: 50%;
-  top: 50%;
-  border-radius: 5px;
-  padding: 0;
-  background-color: none;
-  transition: all 0.3s ease-out;
-  justify-content: center;
-  flex-direction: column;
-}
-.slides > article > * {
-  display: block;
-  clear: both;
-  min-width: 100%;
-	flex-wrap: wrap;
-}
-.slides > article > img {
-  min-width: 0;
-  display: block;
-  margin: 0 auto;
-}
 .slide-area {
   z-index: 1000;
   position: absolute;
