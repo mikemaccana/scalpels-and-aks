@@ -9,7 +9,7 @@ $colorCombinations: (($smoky-blue black), ($blue black), ($purple black), ($azur
 $slideCount: 40;
 
 @for $slideNumber from 1 through $slideCount {
-	$imageNumber: random(10) + 1;
+	$imageNumber: random(10);
 	$image: "/images/"+$imageNumber+".jpg";
 	$gradient: randomGradient();
 	.slides > article:nth-child(39n+#{$slideNumber}):before {
