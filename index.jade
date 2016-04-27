@@ -29,10 +29,10 @@ html
 					p Normally a pain in the arse to get.
 
 				article.plain
-					h1(style="font-size: 192pt;") CertSimple do EV 40-100x faster than Symantec, GoDaddy, and Comodo.
+					h1(style="font-size: 192pt; line-height: 158pt;") CertSimple do EV 40-100x faster than Symantec, GoDaddy, and Comodo.
 
 				article
-					h2 We need to connect to:
+					h2 We connect to:
 					ul.build
 						li Government data for 100M companies in 63 countries
 						li 60+ independent data sources
@@ -59,13 +59,18 @@ html
 				article
 					h2 How to log in - cookies!
 					.comparison
-						.left
+						.option
 							p Using plain request:
-							code var request = require('request').defaults({jar: true})
+							pre.prettyprint
+								code(data-lang="javascript") var request = require('request').defaults({jar: true})
 
-						.right
+						.option
 							p Using superagent:
-							code var superagent = require('superagent').agent();
+							pre.prettyprint
+								code(data-lang="javascript") var superagent = require('superagent').agent();
+
+
+
 
 				article
 					h1 Why Cheerio?
@@ -75,7 +80,68 @@ html
 						li Familiar
 
 				article
+					h2 Basic login with cheerio
+					pre.prettyprint
+						code(data-lang="javascript").
+							agent
+							.get(loginUrl)
+							.end(function(err, res){
+
+								var $ = cheerio.load(res.text);
+
+								var loginDetails = {}
+
+								// Collect the whole form - typically includes a CSRF token
+								$('form input').each(function(index, element){
+									loginDetails[element.attribs.name] = element.attribs.value
+								});
+								loginDetails.username = username
+								loginDetails.password = password
+
+								agent
+								.post(loginUrl)
+								// Superagent uses JSON by default
+								.type('form')
+								.set('Referer', 'https://www.somesite.com/account/login.php')
+								.send(loginDetails)
+								.end(function(err, res){
+									...
+								})
+							})
+
+				article
 					h1 Complete node scalpel approach
+
+				article
+					h2 Scraping module
+					pre.prettyprint
+						code(data-lang="javascript").
+							var superagent = require('superagent').agent();
+
+							var getLoggedInAgent = function(){
+								...see previous example...
+								cb(null, loggedInAgent)
+							}
+
+							module.exports = function(username, password, cb){
+
+								getLoggedInAgent(username, password, function(err, loggedInAgent){
+
+									var getCoolThing = function(){
+										loggedInAgent...
+									}
+
+									var getOtherCoolThing = function(){
+										loggedInAgent...
+									}
+
+									cb(null, {
+										...
+										getCoolThing,
+										getOtherCoolThing
+									})
+								})
+							}
 
 				article
 					h2 The scalpel doesn't work on:
@@ -100,7 +166,7 @@ html
 						li Best place to simulate a browser is a headless browser
 
 				article
-					h1 CASPER REALLY ISN'T NODE OR V8
+					h1 CASPER ISN'T NODE OR V8
 
 				article
 					h2 Casper is it's own runtime
@@ -111,13 +177,89 @@ html
 						li #!/usr/bin/env casperjs starts casper (JavaScriptCore)
 
 				article
-					h1 CASPER CAN BE A MICROSERVICE
+					h2 Casper is focused on driving the browser
+					p Except stuff inside .evaluate(), which is run on the page
+					pre.prettyprint
+						code(data-lang="javascript").
+
+							var searchCompany = 'Foo Inc.'
+
+							casper.start('https://somesite.com/login');
+							casper.userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36");
+							casper.then(function(){
+								this.fill('form[name=LoginForm]', {
+									'username': config.username,
+									'password': config.password
+								}, true);
+							});
+
+							casper.waitForSelector('div.screenname', function() {
+								screenName = this.evaluate(function(){
+									return document.querySelector('div.screenname').innerText
+								})
+								log('screenname', screenName)
+							});
+
+							casper.then(function() {
+								this.evaluate(function(searchCompany){
+									document.querySelector('input.homepage-section-search-input-box').value = searchCompany;
+								}, searchCompany)
+							});
+
+							casper.then(function() {
+								this.mouseEvent('click', '#homepageSearchIcon')
+							});
+
+							casper.waitForSelector('#findCompaniesTab', function() {
+							// Switch to the companies tab
+								this.mouseEvent('click', '#findCompaniesTab');
+							});
+
+				article
+					h2 CASPER SUPPORTS COMMONJS
+					p JavaScript modules only
+
+				article
+					h2 TALK TO CASPER AS A MICROSERVICE
+					p Using the 'webserver' commonjs module
+
+				article
+					p Using the 'webserver' CommonJS module:
+					pre.prettyprint
+						code(data-lang="javascript").
+							#!/usr/bin/env casperjs
+							var casper = require('casper').create();
+							var server = require('webserver').create();
+							var ipAndPort = '127.0.0.1:8585';
+
+							server.listen(ipAndPort, function(request, response) {
+
+							    casper.start('https://connect.data.com/login');
+							    casper.userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36");
+							    casper.then(function(){
+							        // lots of code here, and a few more cassper.then()s
+							    });
+
+							    casper.run(function(){
+							        console.log('\n\nFinished')
+							        response.statusCode = 200;
+							        var body = JSON.stringify({
+							            phoneNumber: '1800-YOLO-SWAG'
+							        })
+
+							        response.write(body);
+							        response.close();
+							    });
+							});$
+
+
 
 				article
 					h2 Someone doesn't want me to scrape!
 					ul.build
 						li Reconsider
 						li Use a modern useragent
+						li Check your referers
 						li proxymesh.com - 280s IPs per day
 						li Various things on GitHub can defeat CloudFlare
 

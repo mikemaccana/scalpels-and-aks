@@ -1,26 +1,52 @@
+$code-font: 'Droid Sans Mono', 'Courier New', monospace;
+
+$yellow: #E9D84D;
+
+$aqua: #4ECED6;
+
+$purple: #9336AF;
+
+$mid-grey: #A1A1A1;
+
+pre {
+	text-align: left;
+	font-size: 22pt;
+	font-family: $code-font;
+	font-weight: 300;
+	line-height: 28px;
+	margin: 16px;
+	color: white;
+	overflow: scroll;
+	tab-size: 2;
+}
+code {
+}
+
+// MM: Some fucking asshole uses compressed names everywhere and comments to indicate what they mean
+
 .prettyprint .str,
 .prettyprint .atv {
 /* a markup attribute value */
-	color: #008a35;
+	color: $yellow;
 }
-.prettyprint .kwd,
-.prettyprint .tag {
-/* a markup tag name */
-	color: #06c;
+// Keyword, tag
+.prettyprint .kwd, .prettyprint .tag {
+	color: $aqua;
 }
+// Comment
 .prettyprint .com {
-/* a comment */
 	color: #7f7f7f;
 	font-style: italic;
 }
+// Literal
 .prettyprint .lit {
-/* a literal value */
-	color: #7f0000;
+	color: $purple;
 }
+// Punctuation
 .prettyprint .pun,
 .prettyprint .opn,
 .prettyprint .clo {
-	color: #7f7f7f;
+	color: $mid-grey;
 }
 .prettyprint .typ,
 .prettyprint .atn,

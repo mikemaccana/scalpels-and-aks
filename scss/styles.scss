@@ -3,6 +3,7 @@
 @import "fonts";
 @import	"universal";
 @import	"mixins";
+@import	"syntax";
 
 $slide-width: 1920;
 $slide-height: 1080;
@@ -199,11 +200,12 @@ article.fill h3 {
 .comparison {
 	width: 100%;
 	display: flex;
-	flex-flow: row;
+	flex-flow: column;
 	align-items: center;
 	padding-top: 48px;
-	.left, .right {
+	.option {
 		width: 50%;
+		margin: 24px;
 		flex: 1 0 0px;
 	}
 }
