@@ -377,14 +377,6 @@ article.smaller q::after {
 /* a declaration; a variable name */
   color: #7f007f;
 }
-html {
-  box-sizing: border-box;
-}
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
-}
 .slides > article {
   padding: 50px;
 }

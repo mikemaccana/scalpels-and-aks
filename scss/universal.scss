@@ -1,5 +1,12 @@
 $heading-font: "easycoreregular";
 
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 b {
   font-weight: 600;
 }
