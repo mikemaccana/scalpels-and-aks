@@ -1,4 +1,4 @@
-$colorCombinations: ((#4F7756 #010101), (#55AD7A #010101), (#90F86F #010101), (#25DC2E #000000));
+$colorCombinations: (($smoky-blue black), ($blue black), ($purple black), ($azure black));
 
 @function randomGradient() {
 	$randomNumber: random(4);

@@ -1,11 +1,48 @@
 @font-face {
 	font-family: 'easycoreregular';
-	src: url('/fonts/easycore-webfont.eot');
-	src: url('/fonts/easycore-webfont.eot?#iefix') format('embedded-opentype'),
-		url('/fonts/easycore-webfont.woff2') format('woff2'),
-		url('/fonts/easycore-webfont.woff') format('woff'),
-		url('/fonts/easycore-webfont.ttf') format('truetype'),
-		url('/fonts/easycore-webfont.svg#easycoreregular') format('svg');
+	src: url('/fonts/easycore/easycore-webfont.eot');
+	src: url('/fonts/easycore/easycore-webfont.eot?#iefix') format('embedded-opentype'),
+		url('/fonts/easycore/easycore-webfont.woff2') format('woff2'),
+		url('/fonts/easycore/easycore-webfont.woff') format('woff'),
+		url('/fonts/easycore/easycore-webfont.ttf') format('truetype'),
+		url('/fonts/easycore/easycore-webfont.svg#easycoreregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'amaticbold';
+	src: url('/fonts/amatic/amatic-bold-webfont.eot');
+	src: url('/fonts/amatic/amatic-bold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/amatic/amatic-bold-webfont.woff2') format('woff2'),
+		 url('/fonts/amatic/amatic-bold-webfont.woff') format('woff'),
+		 url('/fonts/amatic/amatic-bold-webfont.ttf') format('truetype'),
+		 url('/fonts/amatic/amatic-bold-webfont.svg#amaticbold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+
+}
+
+@font-face {
+	font-family: 'amatic_scregular';
+	src: url('/fonts/amatic/amaticsc-regular-webfont.eot');
+	src: url('/fonts/amatic/amaticsc-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/amatic/amaticsc-regular-webfont.woff2') format('woff2'),
+		 url('/fonts/amatic/amaticsc-regular-webfont.woff') format('woff'),
+		 url('/fonts/amatic/amaticsc-regular-webfont.ttf') format('truetype'),
+		 url('/fonts/amatic/amaticsc-regular-webfont.svg#amatic_scregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'tccsansnormal';
+	src: url('/fonts/tccsans/tccsans-normal-webfont.eot');
+	src: url('/fonts/tccsans/tccsans-normal-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/tccsans/tccsans-normal-webfont.woff2') format('woff2'),
+		 url('/fonts/tccsans/tccsans-normal-webfont.woff') format('woff'),
+		 url('/fonts/tccsans/tccsans-normal-webfont.ttf') format('truetype'),
+		 url('/fonts/tccsans/tccsans-normal-webfont.svg#tccsansnormal') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

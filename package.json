@@ -1,7 +1,7 @@
 {
-  "name": "burn-everything-down-and-use-flex",
+  "name": "scalpels-and-aks",
   "version": "1.0.0",
-  "description": "",
+  "description": "Slides for Scalpels and AKs: how to scrape everything in node.js",
   "main": "slides.js",
   "directories": {
     "example": "examples"

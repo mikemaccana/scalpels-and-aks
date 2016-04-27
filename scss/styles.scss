@@ -1,4 +1,5 @@
 // Basic settings
+@import "colors";
 @import "fonts";
 @import	"universal";
 @import	"mixins";
@@ -116,16 +117,6 @@
 			transform: translate(4000px);
 			display: none;
 		}
-
-		// &:nth-child(5n+1):after {
-		// 	background-image: linear-gradient(-208deg, #81af9b 0%, #7aa8ac 27%, #6693da 100%);
-		// }
-		// &:nth-child(5n+2):after {
-		// 	background-image: linear-gradient(-132deg, #fd0 0%, #6dd7ba 100%);
-		// }
-
-
-
 	}
 }
 
@@ -195,9 +186,6 @@ article.fill h3 {
 	padding-left: 60px;
 	margin-right: -60px;
 	padding-right: 60px;
-}
-body {
-	font-family: 'Open Sans', sans-serif;
 }
 
 .center {

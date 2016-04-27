@@ -12,30 +12,30 @@ html
 					p Yaay the projector works
 					small You may need to zoom out a little if the text is too big
 
-				article
-					h2 STUFF YOU WON'T FIND IN THE DOCS
-
 				article.first
-					h1(style="font-size:96px; text-transform: uppercase") Scalpels and guns
+					h1(style="font-size: 256pt; text-transform: uppercase") Scalpels and guns
 					h2 Scrape anything with node.js
 					br
 					h3
 						a(href='http://twitter.com/mikemaccana',style="text-decoration: none;") @mikemaccana
 
+				article.plain
+					h1 THIS IS A TALK ABOUT WHAT WILL WORK.
+
 				article
 					img(src="images/ev-ssl.png")
 					h2 <br/>CertSimple does EV
-					p EV checks the legal identity that controls a website
+					p Background checks to confirm legal entity comtrolling a website
 
 				article.plain
-					h2 CertSimple do it 40-100x faster than Symantec, GoDaddy, etc.
+					h1(style="font-size: 192pt;") CertSimple do it 40-100x faster than Symantec, GoDaddy, etc.
 
 				article
-					h1 Connects to:
+					h2 Connects to APIs for:
 					ul.build
 						li Government data for 100M companies in 63 countries
 						li 60+ independent data sources
-						li A bunch of other data sources including DNS, whois, and a CA.
+						li Other data sources: DNS, whois, and a CA.
 
 				article
 					h1 Problem
@@ -44,10 +44,10 @@ html
 						li Most have bad/poor APIs
 
 				article
-					h1 Why bad APIs are bad
+					h1 Bad APIs
 					ul.build
-						li Functionality exposed through UI that isn't available in API
-						li Functionality exposed via email that isn't available in API
+						li Functionality exposed through UI isn't available in API
+						li Functionality exposed via email isn't available in API
 						li No webhooks, so no realtime
 
 				article
@@ -59,10 +59,10 @@ html
 					p Use this 95% of the time
 
 				article
-					h1 LOG IN, GET A SESSION, and SCRAPE
+					h1 LOG IN and SCRAPE
 
 				article
-					h1 How to log in - cookies!
+					h2 How to log in - cookies!
 					.halves.build
 						.half
 							p Using plain request:
@@ -95,7 +95,7 @@ html
 					h3 When you absolutely, positively, got to scrape every element in the DOM
 
 				article
-					h1 Some pages can't be scraped
+					h2 Some pages can't be scraped
 					ul.build
 						li Single page apps without a 'fastboot' option
 						li This monstrosity: http://directwebremoting.org/dwr/index.html
@@ -110,12 +110,12 @@ html
 						li SpookyJS (node) isn't maintained
 
 				article
-					h1 What if someone doesn't want me to do something?
+					h2 Someone doesn't want me to scrape!
 					ul.build
 						li Reconsider
 						li Use a modern useragent
-						li Various things on GitHub can defeat CloudFlare IUAM
 						li proxymesh.com - 280s IPs per day
+						li Various things on GitHub can defeat CloudFlare
 
 				article
 					h1 CASPER ISN'T NODE OR V8
@@ -124,7 +124,7 @@ html
 					h1 CASPER REALLY ISN'T NODE OR V8
 
 				article
-					h1 Casper is it's own runtime
+					h2 Casper is it's own runtime
 					ul.build
 						li #!/usr/bin/env casperjs starts python
 						li #!/usr/bin/env casperjs starts ruby
