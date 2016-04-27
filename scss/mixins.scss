@@ -10,7 +10,7 @@ $slideCount: 40;
 
 @for $slideNumber from 1 through $slideCount {
 	$imageNumber: random(10);
-	$image: "/images/"+$imageNumber+".jpg";
+	$image: "../images/"+$imageNumber+".jpg";
 	$gradient: randomGradient();
 	.slides > article:nth-child(39n+#{$slideNumber}):before {
 		background-image: url($image);
