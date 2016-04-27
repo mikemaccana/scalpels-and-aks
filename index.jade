@@ -1,0 +1,166 @@
+doctype html
+html
+	head
+			title 🔪 and 🔫
+			meta(charset='utf-8')
+			script(src='slides.js')
+			link(href='https://fonts.googleapis.com/css?family=Bangers|Open+Sans:400,700' rel='stylesheet' type='text/css')
+			link(href='styles.css'  rel='stylesheet' type='text/css')
+		body
+			section.slides.layout-regular.template-default
+
+				article
+					p Yaay the projector works
+					small You may need to zoom out a little if the text is too big
+
+				article
+					h2 STUFF YOU WON'T FIND IN THE DOCS
+
+				article.first
+					h1(style="font-size:96px; text-transform: uppercase") Scalpels and guns
+					h2 Scrape anything with node.js
+					br
+					h3
+						a(href='http://twitter.com/mikemaccana',style="text-decoration: none;") @mikemaccana
+
+				article
+					img(src="images/ev-ssl.png")
+					h2 <br/>CertSimple does EV
+					p EV checks the legal identity that controls a website
+
+				article.plain
+					h2 CertSimple do it 40-100x faster than Symantec, GoDaddy, etc.
+
+				article
+					h1 Connects to:
+					ul.build
+						li Government data for 100M companies in 63 countries
+						li 60+ independent data sources
+						li A bunch of other data sources including DNS, whois, and a CA.
+
+				article
+					h1 Problem
+					ul.build
+						li Some data sources don't have APIs at all
+						li Most have bad/poor APIs
+
+				article
+					h1 Why bad APIs are bad
+					ul.build
+						li Functionality exposed through UI that isn't available in API
+						li Functionality exposed via email that isn't available in API
+						li No webhooks, so no realtime
+
+				article
+					p How to scrape anything you want
+					p All the things you'll wish you knew earlier
+
+				article
+					h1 THE SCALPEL APPROACH
+					p Use this 95% of the time
+
+				article
+					h1 LOG IN, GET A SESSION, and SCRAPE
+
+				article
+					h1 How to log in - cookies!
+					.halves.build
+						.half
+							p Using plain request:
+							code var request = request.defaults({jar: true})
+
+						.half
+							p Using superagent:
+							code var superagent = require('superagent').agent();
+
+				article
+					h1 Why not JSDOM?
+					ul.build
+						li DOM level 3 is super complex to implement
+						li Native
+						li Vanilla DOM API still a bit complicated
+
+				article
+					h1 Use Cheerio
+					ul.build
+						li Boring
+						li Works
+
+				article
+					h1 Complete node scalpel approach
+
+				article
+					h1 WHEN THE SCALPEL DOESN'T WORK
+
+				article
+					h3 When you absolutely, positively, got to scrape every element in the DOM
+
+				article
+					h1 Some pages can't be scraped
+					ul.build
+						li Single page apps without a 'fastboot' option
+						li This monstrosity: http://directwebremoting.org/dwr/index.html
+						li JS should be sandboxed - node has require('vm').runInNewContext() but still
+						li Best place to simulate a browser is a headless browser
+
+				article
+					h1 Why Casper?
+					ul.build
+						li Casper is higher level than PhantomJS
+						li PhantomJS folks like Casper
+						li SpookyJS (node) isn't maintained
+
+				article
+					h1 What if someone doesn't want me to do something?
+					ul.build
+						li Reconsider
+						li Use a modern useragent
+						li Various things on GitHub can defeat CloudFlare IUAM
+						li proxymesh.com - 280s IPs per day
+
+				article
+					h1 CASPER ISN'T NODE OR V8
+
+				article
+					h1 CASPER REALLY ISN'T NODE OR V8
+
+				article
+					h1 Casper is it's own runtime
+					ul.build
+						li #!/usr/bin/env casperjs starts python
+						li #!/usr/bin/env casperjs starts ruby
+						li #!/usr/bin/env casperjs starts node (v8)
+						li #!/usr/bin/env casperjs starts casper (JavaScriptCore)
+
+				article
+					h1 CASPER CAN BE A MICROSERVICE
+
+				article
+					h1 Follow me.
+					h2(style="font-size:60px;") I will tweet storm links to everything now.
+					img(src='images/twitter-logo.png', style="height: 260px; width: 300px; margin:100px auto")
+					h2
+						a(href='http://twitter.com/mikemaccana', target='_blank') @mikemaccana
+
+				article
+					h1 Launching something?
+					h1 £80 off CertSimple
+
+				article
+					h1 Stickers!
+					img(src='images/certsimple-stickers.png')
+
+				article
+					h1.big Thanks
+					h2 @mikemaccana
+					h2 certsimple.com
+
+				article
+					h1 Links
+					a(href="https://www.npmjs.com/package/request" target=_blank) Request cookies examples
+					a(href="https://github.com/visionmedia/superagent/blob/master/test/node/agency.js" target=_blank) Superagent cookie examples
+					a(href="https://github.com/cheeriojs/cheerio" target=_blank) Cheerio
+
+
+
+

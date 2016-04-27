@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="843px" height="625px" viewBox="0 0 843 625" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15855) - http://www.bohemiancoding.com/sketch -->
+    <title>sass</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="sass" sketch:type="MSArtboardGroup">
+            <text id="sass-+-sass-npm-+-mo" sketch:type="MSTextLayer" font-family="Raleway" font-size="48" font-weight="260" sketch:alignment="middle" fill="#FFFFFF">
+                <tspan x="121.548" y="72">sass + sass-npm + modules</tspan>
+            </text>
+            <text id="style.scss" sketch:type="MSTextLayer" font-family="Andale Mono" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                <tspan x="388.490234" y="174">style.scss</tspan>
+            </text>
+            <text id="@import-&quot;progress-ba" sketch:type="MSTextLayer" font-family="Andale Mono" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="409" y="201">@import "progress-bar";</tspan>
+            </text>
+            <text id="&lt;link-rel='styleshee" sketch:type="MSTextLayer" font-family="Andale Mono" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                <tspan x="138.454102" y="131">&lt;link rel='stylesheet' href='/css/style.css' /&gt;</tspan>
+            </text>
+            <text id=".progress-bar-{" sketch:type="MSTextLayer" font-family="Andale Mono" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="466" y="330">.progress-bar {</tspan>
+                <tspan x="466" y="352"></tspan>
+                <tspan x="466" y="374">}</tspan>
+            </text>
+            <text id=".twitter-customers-{" sketch:type="MSTextLayer" font-family="Andale Mono" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="466" y="478">.twitter-customers {</tspan>
+                <tspan x="466" y="500"></tspan>
+                <tspan x="466" y="522">}</tspan>
+            </text>
+            <text id="@import-&quot;twitter-cus" sketch:type="MSTextLayer" font-family="Andale Mono" font-size="20" font-weight="normal" sketch:alignment="middle" fill="#FFFFFF">
+                <tspan x="409.472656" y="225">@import "twitter-customers";</tspan>
+            </text>
+            <g id="Rectangle-1-+-Line-+-Line" sketch:type="MSLayerGroup" transform="translate(53.000000, 178.000000)" stroke="#FFFFFF" stroke-width="4">
+                <rect id="Rectangle-1" sketch:type="MSShapeGroup" x="0" y="0" width="281" height="400"></rect>
+                <g id="box" transform="translate(15.000000, 271.000000)" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-1" x="0.849009901" y="0" width="246.534653" height="85"></rect>
+                    <path d="M6.00000002,3.00000001 L244.000002,82.0000031" id="Line" stroke-linecap="square"></path>
+                    <path d="M244.141603,3.42285151 L5.22656241,81.2548828" id="Line" stroke-linecap="square"></path>
+                </g>
+                <g id="box" transform="translate(17.000000, 126.000000)" sketch:type="MSShapeGroup">
+                    <rect id="Rectangle-1" x="0.849009901" y="0" width="246.534653" height="85"></rect>
+                    <path d="M6.00000002,3.00000001 L244.000002,82.0000031" id="Line" stroke-linecap="square"></path>
+                    <path d="M244.141603,3.42285151 L5.22656241,81.2548828" id="Line" stroke-linecap="square"></path>
+                </g>
+            </g>
+            <text id="..." sketch:type="MSTextLayer" font-family="Andale Mono" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="484" y="353">...</tspan>
+            </text>
+            <text id="..." sketch:type="MSTextLayer" font-family="Andale Mono" font-size="20" font-weight="normal" fill="#FFFFFF">
+                <tspan x="484" y="501">...</tspan>
+            </text>
+        </g>
+    </g>
+</svg>
