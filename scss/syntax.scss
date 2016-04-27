@@ -1,0 +1,31 @@
+.prettyprint .str,
+.prettyprint .atv {
+/* a markup attribute value */
+	color: #008a35;
+}
+.prettyprint .kwd,
+.prettyprint .tag {
+/* a markup tag name */
+	color: #06c;
+}
+.prettyprint .com {
+/* a comment */
+	color: #7f7f7f;
+	font-style: italic;
+}
+.prettyprint .lit {
+/* a literal value */
+	color: #7f0000;
+}
+.prettyprint .pun,
+.prettyprint .opn,
+.prettyprint .clo {
+	color: #7f7f7f;
+}
+.prettyprint .typ,
+.prettyprint .atn,
+.prettyprint .dec,
+.prettyprint .var {
+/* a declaration; a variable name */
+	color: #7f007f;
+}

@@ -52,7 +52,7 @@ h1 {
   padding: 0;
   margin: 0;
   color: $pale-blue;
-  transform: skew(0, -8deg);
+  transform: skew(0, -4deg);
   a {
     text-decoration: none;
     font-size: 20px;
@@ -183,29 +183,15 @@ code {
 	border-radius: 4px;
 	font-weight: 600;
 }
-iframe {
-	width: 100%;
-	height: 620px;
-	background: $pale-blue;
-	border: 1px solid #c0c0c0;
-	margin: -1px;
-/*box-shadow: inset 0 2px 6px rgba(0, 0, 0, .1);*/
-}
 img {
 	max-width: 100%;
 	max-height: 570px;
-}
-h3 + iframe {
-	margin-top: 40px;
-	height: 540px;
 }
 q {
 	display: block;
 	font-size: 60px;
 	line-height: 72px;
-	margin-left: 20px;
-	margin-top: 100px;
-	margin-right: 150px;
+	font-style: oblique;
 }
 q::before {
 	content: '“';
@@ -223,4 +209,22 @@ q::after {
 	margin-left: 0.1em;
 	font-size: 90px;
 	color: #c0c0c0;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 40px;
+	margin-left: 0.75em;
+}
+
+div.author {
+	text-align: right;
+	font-size: 40px;
+	margin-top: 20px;
+	margin-right: 150px;
+}
+div.author::before {
+	content: '—';
 }
