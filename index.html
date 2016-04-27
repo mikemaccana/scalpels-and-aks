@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><title>🔪 and 🔫</title><meta charset="utf-8"><script src="slides.js"></script><link href="css/styles.css" rel="stylesheet" type="text/css"></head><body><section class="slides layout-regular template-default"><article><p>Yaay the projector works</p><small>You may need to zoom out a little if the text is too big</small></article><article class="first"><h1 style="text-transform: uppercase">Scalpels and AKs</h1><h2>Scrape anything with node.js</h2><br><h3><a href="http://twitter.com/mikemaccana" style="text-decoration: none;">@mikemaccana</a></h3></article><article class="plain"><h1>THIS <br>WILL<br> WORK.</h1></article><article><img src="images/ev-ssl.png"><h2><br/>CertSimple does EV</h2><p>Confirms legal entity behind a site</p><p>Normally a pain in the arse to get.</p></article><article class="plain"><h1 style="font-size: 192pt; line-height: 158pt;">CertSimple do EV 40-100x faster than Symantec, GoDaddy, and Comodo.</h1></article><article><h2>We connect to:</h2><ul class="build"><li>Government data for 100M companies in 63 countries</li><li>60+ independent data sources</li><li>Other data sources: DNS, whois, and a CA.</li></ul></article><article><h1>Problem</h1><ul class="build"><li>Some data sources don't have APIs at all</li><li>API exists, but missing some functionality exposed through UI</li><li>No webhooks, so no realtime</li></ul></article><article><h2>How to scrape anything you want</h2></article><article><h1>THE SCALPEL</h1><p>Use this 95% of the time</p></article><article><h1>LOG IN and SCRAPE</h1></article><article><h2>How to log in - cookies!</h2><div class="comparison"><div class="option"><p>Using plain request:</p><pre class="prettyprint"><code data-lang="javascript">var request = require('request').defaults({jar: true})</code></pre></div><div class="option"><p>Using superagent:</p><pre class="prettyprint"><code data-lang="javascript">var superagent = require('superagent').agent();</code></pre></div></div></article><article><h1>Why Cheerio?</h1><ul class="build"><li>Way smaller and less complex than JSDOM</li><li>Pure JS, no compilation needed.</li><li>Familiar</li></ul></article><article><h2>Typical login & CSRF with cheerio</h2><pre class="prettyprint"><code data-lang="javascript">agent
+<!DOCTYPE html><html><head><title>🔪 and 🔫</title><meta charset="utf-8"><script src="slides.js"></script><link href="css/styles.css" rel="stylesheet" type="text/css"></head><body><section class="slides layout-regular template-default"><article><p>Yaay the projector works</p><small>You may need to zoom out a little if the text is too big</small></article><article class="first"><h1 style="text-transform: uppercase">Scalpels and AKs</h1><h2>Scrape anything with node.js</h2><br><h3><a href="http://twitter.com/mikemaccana" style="text-decoration: none;">@mikemaccana</a></h3></article><article class="plain"><h1>THIS <br>WILL<br> WORK.</h1></article><article><img src="images/ev-ssl.png"><h2><br/>CertSimple does EV</h2><p>Confirms legal entity behind a site</p><p>Normally a pain in the arse and really slow</p></article><article class="plain"><h1 style="font-size: 192pt; line-height: 158pt;">CertSimple do EV 40-100x faster than Symantec, GoDaddy, and Comodo.</h1></article><article><h2>We connect to:</h2><ul class="build"><li>Government data for 100M companies in 63 countries</li><li>60+ independent data sources</li><li>Other data sources: DNS, whois, and a CA.</li></ul></article><article><h1>Problem</h1><ul class="build"><li>Some data sources don't have APIs at all</li><li>API exists, but missing some functionality exposed through UI</li><li>No webhooks, so no realtime</li></ul></article><article><h2>How to scrape anything you want</h2></article><article><h1>THE SCALPEL</h1><p>Use this 95% of the time</p></article><article><h1>LOG IN and SCRAPE</h1></article><article><h2>How to log in - cookies!</h2><div class="comparison"><div class="option"><p>Using plain request:</p><pre class="prettyprint"><code data-lang="javascript">var request = require('request').defaults({jar: true})</code></pre></div><div class="option"><p>Using superagent:</p><pre class="prettyprint"><code data-lang="javascript">var superagent = require('superagent').agent();</code></pre></div></div></article><article><h1>Why Cheerio?</h1><ul class="build"><li>Way smaller and less complex than JSDOM</li><li>Pure JS, no compilation needed.</li><li>Familiar</li></ul></article><article><h2>The Scalpel: login & scrape with superagent & cheerio</h2><pre class="prettyprint"><code data-lang="javascript">agent
 .get(loginUrl)
 .end(function(err, res){
 
@@ -20,36 +20,11 @@
 	.set('Referer', 'https://www.somesite.com/account/login.php')
 	.send(loginDetails)
 	.end(function(err, res){
-		...
+		// We have logged in
+		// We can run agent.get() and cheerio.load() just like the above and scrape everything we need
 	})
 })
-</code></pre></article><article><h1>Complete node scalpel approach</h1></article><article><h2>Scraping module</h2><pre class="prettyprint"><code data-lang="javascript">var superagent = require('superagent').agent();
-
-var getLoggedInAgent = function(){
-	...see previous example...
-	cb(null, loggedInAgent)
-}
-
-module.exports = function(username, password, cb){
-
-	getLoggedInAgent(username, password, function(err, loggedInAgent){
-
-		var getCoolThing = function(){
-			loggedInAgent...
-		}
-
-		var getOtherCoolThing = function(){
-			loggedInAgent...
-		}
-
-		cb(null, {
-			...
-			getCoolThing,
-			getOtherCoolThing
-		})
-	})
-}
-</code></pre></article><article><h2>The scalpel doesn't work on:</h2><ul class="build"><li>pages generated by JS</li><li>Single page apps without a 'fastboot' option</li><li>This monstrosity: http://directwebremoting.org/dwr/index.html</li></ul></article><article><h1>THE AK47</h1><p>Use this 5% of the time</p></article><article><q>When you absolutely, positively, got to get every datum in the site</q></article><article><h1>Why Casper?</h1><ul class="build"><li>Casper is higher level than PhantomJS</li><li>PhantomJS folks like Casper</li><li>SpookyJS (node) isn't maintained</li><li>You can evaluate JS in node sandbox with 'vm' module but not a complete browser</li></ul></article><article><h1>CASPER ISN'T NODE</h1></article><article><h2>Casper is it's own runtime</h2><ul class="build"><li>#!/usr/bin/env python starts python</li><li>#!/usr/bin/env ruby starts ruby</li><li>#!/usr/bin/env node starts node (v8)</li><li>#!/usr/bin/env casperjs starts casper (JavaScriptCore)</li></ul></article><article><h2>Casper code drives a browser</h2><p>Except stuff inside .evaluate(), which is run on the page</p><pre class="prettyprint"><code data-lang="javascript">var searchCompany = 'Foo Inc.'
+</code></pre></article><article><h2>The scalpel doesn't work on:</h2><ul class="build"><li>pages generated by JS</li><li>Single page apps without a 'fastboot' feature</li><li>This monstrosity: http://directwebremoting.org/dwr/index.html</li></ul></article><article><h1>THE AK47</h1><p>Use this 5% of the time</p></article><article><q>When you absolutely, positively, got to get every datum in the site</q></article><article><h1>Why Casper?</h1><ul class="build"><li>Casper is higher level than PhantomJS</li><li>PhantomJS folks like Casper</li><li>SpookyJS (node) isn't maintained</li><li>You can evaluate JS in node sandbox with 'vm' module but not a complete browser</li></ul></article><article><h1>CASPER ISN'T NODE</h1></article><article><h2>Casper is it's own runtime</h2><ul class="build"><li>#!/usr/bin/env python starts python</li><li>#!/usr/bin/env ruby starts ruby</li><li>#!/usr/bin/env node starts node (v8)</li><li>#!/usr/bin/env casperjs starts casper (JavaScriptCore)</li></ul></article><article><h2>Casper code drives a browser</h2><p>Except stuff inside .evaluate(), which is run on the page</p><pre class="prettyprint"><code data-lang="javascript">var searchCompany = 'Foo Inc.'
 
 casper.start('https://somesite.com/login');
 casper.userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/47.0.2526.106 Safari/537.36");
